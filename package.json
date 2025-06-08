@@ -1,5 +1,5 @@
 {
-  "name": "celestialdocs",
+  "name": "FarmTech",
   "type": "module",
   "version": "0.0.5",
   "description": "Documentation template using AstroJS and Shadcn",
@@ -7,9 +7,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HYP3R00T/CelestialDocs"
+    "url": "https://github.com/stevenalp207/FarmTechDocs"
   },
-  "homepage": "https://celestialdocs.hyperoot.dev/",
+  "homepage": "https://farmtechdocs.vercel.app/",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

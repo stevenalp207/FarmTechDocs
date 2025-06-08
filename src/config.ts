@@ -1,12 +1,12 @@
 import type { SocialObjects } from "@/lib/types";
 
 export const SITE = {
-  website: "https://hyperoot.dev", // replace this with your deployed domain
+  website: "https://farmtechdocs.vercel.app/", // replace this with your deployed domain
   author: "FarmTech",
   desc: "Documentación de FarmTech",
   title: "FarmTech Docs",
   ogImage: "og-image.jpg",
-  repo: "https://github.com/HYP3R00T/CelestialDocs",
+  repo: "https://github.com/stevenalp207/FarmTechDocs",
 };
 
 export const LOCALE = {
