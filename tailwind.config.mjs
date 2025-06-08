@@ -109,7 +109,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
+      sans: ["'Exo 2 Variable'", "sans-serif"],
       mono: ["'JetBrains Mono'", ...defaultTheme.fontFamily.mono],
     },
   },
