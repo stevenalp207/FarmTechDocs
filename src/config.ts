@@ -2,16 +2,16 @@ import type { SocialObjects } from "@/lib/types";
 
 export const SITE = {
   website: "https://hyperoot.dev", // replace this with your deployed domain
-  author: "HYP3R00T",
-  desc: "Documentation template using Astro and Shadcn",
-  title: "CelestialDocs",
+  author: "FarmTech",
+  desc: "Documentación de FarmTech",
+  title: "FarmTech Docs",
   ogImage: "og-image.jpg",
   repo: "https://github.com/HYP3R00T/CelestialDocs",
 };
 
 export const LOCALE = {
-  lang: "en", // html lang code. Set this empty and default will be "en"
-  langTag: ["en-EN"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+  lang: "es", // html lang code. Set this empty and default will be "en"
+  langTag: ["es-ES"], // BCP 47 Language Tags. Set this empty [] to use the environment default
 } as const;
 
 export const menu_items: { title: string; href: string }[] = [
