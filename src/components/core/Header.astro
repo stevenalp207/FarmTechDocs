@@ -15,7 +15,7 @@ const { class: className } = Astro.props;
 
 <header
   class:list={[
-    "py-4 px-4 md:px-8 lg:px-4 w-full sticky top-0 z-50",
+    "py-4 px-4 md:px-2 lg:px-0 w-full sticky top-0 z-50",
     className,
   ]}
 >
@@ -29,12 +29,14 @@ const { class: className } = Astro.props;
           className="flex gap-2 hover:no-underline text-2xl"
           variant="link"
         >
-          <img src="/logo.svg" alt="Logo" class="w-[10rem] h-[10rem]" />
+          <img src="/logo.svg" alt="Logo" class="w-[10rem] h-[10rem] block dark:hidden" />
+          <img src="/logodk.svg" alt="Logo" class="w-[10rem] h-[10rem] hidden dark:block"/>
         </Button>
       </a>
       <a href="/" class="px-4 flex md:hidden">
-        <Button client:load className="" variant="ghost">
-          <img src="/logo.svg" alt="Logo" class="w-[8rem] h-[8rem]" />
+        <Button client:load className="flex gap-2 hover:no-underline text-2xl" variant="link">
+          <img src="/logo.svg" alt="Logo" class="w-[8rem] h-[8rem] block dark:hidden" />
+          <img src="/logodk.svg" alt="Logo" class="w-[10rem] h-[10rem] hidden dark:block"/>
         </Button>
       </a>
       <div class="hidden md:block">
@@ -44,15 +46,6 @@ const { class: className } = Astro.props;
 
     <div class="flex flex-row gap-2 md:px-8">
       {!docconfig.hide_search && <Search client:only="react" />}
-      {
-        !docconfig.hide_repo_button && (
-          <a href={SITE.repo} target="_blank">
-            <Button client:load className="" variant="ghost" size="icon">
-              <Github className="w-[1.2rem] h-[1.2rem]" />
-            </Button>
-          </a>
-        )
-      }
       <div class="md:hidden flex flex-row-reverse gap-4">
         <HamNavMenu />
         <ModeToggle client:load transition:persist />

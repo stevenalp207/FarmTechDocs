@@ -100,11 +100,11 @@ export function Search() {
         </DialogTrigger>
         <DialogContent className="md:h-1/2 md:mx-0 w-full h-full">
           <DialogHeader>
-            <DialogTitle hidden={true}>Search</DialogTitle>
+            <DialogTitle hidden={true}>Buscar</DialogTitle>
             <DialogDescription asChild className="relative">
               <div className="mt-6 flex flex-col">
                 <Input
-                  placeholder="Search ..."
+                  placeholder="Buscar ..."
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                 />

@@ -2,12 +2,13 @@
 const { class: className } = Astro.props;
 import { Image } from "astro:assets";
 import { Button } from "@/components/ui/button";
-import KittyAstronaut from "@/assets/favicon.svg";
+import logo from "@/assets/favicon.svg";
+import logodk from "@/assets/favicondk.svg";
 ---
 
 <div
   class:list={[
-    "pattern py-6 w-full md:w-3/4 md:max-w-8xl min-h-dynamic_hero flex flex-col items-center justify-center",
+    "py-6 w-full md:w-3/4 md:max-w-8xl min-h-dynamic_hero flex flex-col items-center justify-center",
     className,
   ]}
 >
@@ -18,7 +19,7 @@ import KittyAstronaut from "@/assets/favicon.svg";
       <h1
         class="text-pretty text-center md:text-left md:text-4xl lg:text-5xl tracking-wide"
       >
-        Aprende todo lo que necesitas conocer de <span class="text-primary">FarmTech</span> en esta documentación
+        Todo sobre <span class="text-primary">FarmTech</span> en esta guía
       </h1>
       <a href="/getting-started" class="py-4">
         <Button size="lg" className="rounded-lg">
@@ -27,7 +28,8 @@ import KittyAstronaut from "@/assets/favicon.svg";
       </a>
     </div>
     <div class="hidden md:flex w-1/2 justify-center align-middle">
-      <Image src={KittyAstronaut} alt="404" />
+      <Image src={logo} alt="Logo claro" class="block dark:hidden" />
+      <Image src={logodk} alt="Logo oscuro" class="hidden dark:block" />
     </div>
   </div>
 </div>

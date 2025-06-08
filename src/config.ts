@@ -75,7 +75,7 @@ export const Socials: SocialObjects = [
     name: "Mail",
     href: "mailto:rajesh@hyperoot.dev",
     linkTitle: `Send an email to ${SITE.title}`,
-    active: true,
+    active: false,
   },
   {
     name: "Twitter",
@@ -141,6 +141,6 @@ export const Socials: SocialObjects = [
     name: "Mastodon",
     href: "https://mastodon.social/@hyp3r00t",
     linkTitle: `${SITE.title} on Mastodon`,
-    active: true,
+    active: false,
   },
 ];
