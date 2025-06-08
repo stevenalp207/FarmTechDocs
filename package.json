@@ -2,8 +2,26 @@
   "name": "FarmTech",
   "type": "module",
   "version": "0.0.5",
-  "description": "Documentation template using AstroJS and Shadcn",
-  "author": "Hyperoot <rajesh@hyperoot.dev>",
+  "description": "FarmTech Robot Documentation",
+  "author": "FarmTech Team",
+  "contributors": [
+    {
+      "name": "Steven Alpízar",
+      "role": "Desarollador de Sistemas Embebidos"
+    },
+    {
+      "name": "Esteban Canales",
+      "role": "Desarrollador Full Stack"
+    },
+    {
+      "name": "Sebastián Pastrana",
+      "role": "Técnico de Montaje e Integración electrónica" 
+    },
+    {
+      "name": "Luis Mauricio Ureña",
+      "role": "Diseñador Mecánico y Manufactura"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
