@@ -20,6 +20,9 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.5
         version: 5.1.5(astro@4.16.18(rollup@4.34.0)(typescript@5.7.3))(tailwindcss@3.4.17)
+      '@fontsource-variable/exo-2':
+        specifier: ^5.2.6
+        version: 5.2.6
       '@fontsource-variable/jetbrains-mono':
         specifier: ^5.1.2
         version: 5.1.2
@@ -443,6 +446,9 @@ packages:
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+
+  '@fontsource-variable/exo-2@5.2.6':
+    resolution: {integrity: sha512-9wFQ7oEhQa0S6xgcuCQHj7twrLNkQ+y3gS+u/hsyCF8tqRVSMgXJBF294aF/Xc6WTjNZU+eeWpntycQzb1guVQ==}
 
   '@fontsource-variable/jetbrains-mono@5.1.2':
     resolution: {integrity: sha512-syGEJ/N4FFisAXegxtbe1etYpo2T630dqCbYufPf7Dli/hMKSoSUIm3wK4q5RsGFRxWno1WecfnsgZA1jRK0EQ==}
@@ -3232,6 +3238,8 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@floating-ui/utils@0.2.9': {}
+
+  '@fontsource-variable/exo-2@5.2.6': {}
 
   '@fontsource-variable/jetbrains-mono@5.1.2': {}
 
