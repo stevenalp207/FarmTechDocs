@@ -39,10 +39,10 @@ export const docconfig = {
   hide_breadcrumbs: false,
   hide_side_navigations: false,
   hide_datetime: false,
-  hide_time: true,
+  hide_time: false,
   hide_search: false,
-  hide_repo_button: false,
-  hide_author: true,
+  hide_repo_button: true,
+  hide_author: false,
 };
 
 // Set your social. It will appear in footer. Don't change the `name` value.
