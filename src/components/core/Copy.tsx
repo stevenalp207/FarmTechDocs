@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export function Copy() {
   useEffect(() => {
     function attachCopyButtons() {
-      let copyButtonLabel = "Copy";
+      let copyButtonLabel = "Copiar";
       let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
       for (let codeBlock of codeBlocks) {
@@ -45,7 +45,7 @@ export function Copy() {
         await navigator.clipboard.writeText(text ?? "");
 
         // Visual feedback that task is completed
-        button.innerText = "Copied";
+        button.innerText = "Copiado!";
 
         setTimeout(() => {
           button.innerText = copyButtonLabel;
