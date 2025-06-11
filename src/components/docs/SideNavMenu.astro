@@ -11,33 +11,33 @@ const { class: className } = Astro.props;
 
 <ul class:list={["list-none m-0", className]}>
   {
-    items
-      .filter((item) => !item.draft)
-      .map((item) => {
-        const label = item.title
-          ? capitalizeFirstLetter(item.title)
-          : capitalizeFirstLetter(item.slug.split("/").pop() || "");
+  items
+    .filter((item) => !item.draft)
+    .map((item) => {
+      const label = item.title
+        ? capitalizeFirstLetter(item.title)
+        : capitalizeFirstLetter(item.slug.split("/").pop() || "");
 
-        const isActive = pathname === "/" + item.slug;
-        const baseClass = level === 0 ? "font-semibold" : "text-muted-foreground";
-        const indentClass = level === 1 ? "pl-4" : ""; // solo nivel 1 tiene sangría
-        const activeClass = isActive ? "text-primary" : "no-underline";
+      const isActive = pathname === "/" + item.slug;
+      const baseClass = level === 0 ? "font-semibold" : "text-muted-foreground";
+      const indentClass = level === 1 ? "pl-4" : ""; // aquí movido al <li>
+      const activeClass = isActive ? "text-primary" : "no-underline";
 
-        const linkClass = `${baseClass} ${indentClass} ${activeClass}`.trim();
+      const linkClass = `${baseClass} ${activeClass}`.trim();
 
-        return (
-          <li class="w-full">
-            <a
-              href={`/${item.slug}`}
-              class={`${linkClass} text-sm leading-none w-full`}
-            >
-              {label}
-            </a>
-            {item.children.length > 0 && (
-              <Astro.self items={item.children} level={level + 1} />
-            )}
-          </li>
-        );
-      })
+      return (
+        <li class={`w-full ${indentClass}`}>
+          <a
+            href={`/${item.slug}`}
+            class={`${linkClass} text-sm leading-none w-full`}
+          >
+            {label}
+          </a>
+          {item.children.length > 0 && (
+            <Astro.self items={item.children} level={level + 1} />
+          )}
+        </li>
+      );
+    })
   }
 </ul>

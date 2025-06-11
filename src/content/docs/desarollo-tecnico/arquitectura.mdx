@@ -1,0 +1,23 @@
+---
+title: Arquitectura general del sistema
+---
+
+## Arquitectura general del sistema
+
+El robot **FT-01** está diseñado con una arquitectura modular que integra sensores, actuadores y sistemas de comunicación para operar de manera semi-autónoma.
+
+El núcleo del sistema se compone de una **Raspberry Pi**, encargada del procesamiento central, y una **Jetson Nano**, que potencia el análisis de datos mediante Inteligencia Artificial (IA) utilizando **Gemma3** para la generación de reportes automáticos.
+
+- La **Raspberry Pi** gestiona la adquisición de datos terrestres y satelitales.
+- La **Jetson Nano** ejecuta modelos de IA para interpretar la información y tomar decisiones informadas.
+
+La comunicación entre módulos se realiza a través de protocolos estándar como **I2C** y **UART**, lo que garantiza escalabilidad y facilidad de conexión entre componentes.
+
+> El diseño modular permite una fácil actualización del sistema, integración de nuevos sensores o algoritmos y adaptación a distintos entornos operativos.
+
+## Recursos adicionales
+
+- [Documentación de Raspberry Pi](https://www.raspberrypi.com/documentation/)
+- [Jetson Nano Developer Kit](https://developer.nvidia.com/embedded/jetson-nano-developer-kit)
+- [Protocolo I2C - SparkFun Guide](https://learn.sparkfun.com/tutorials/i2c)
+- [Protocolo UART - Digi-Key Guide](https://www.digikey.com/en/articles/understanding-uart)

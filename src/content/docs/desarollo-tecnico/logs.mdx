@@ -1,0 +1,54 @@
+---
+title: Sistema de logs
+---
+
+El robot **FT-01** implementa un **sistema de registro centralizado** para capturar eventos críticos, datos operativos y mensajes de diagnóstico durante su funcionamiento. Esto permite una trazabilidad clara del comportamiento del sistema y facilita el análisis posterior de posibles fallos o comportamientos anómalos.
+
+### Características principales
+
+- Uso de la librería estándar `logging` de Python.
+- Generación automática de archivos de log diarios.
+- Almacenamiento en un directorio `logs/` dedicado.
+- Formato de nombre de archivo: `farmtech_AAAA-MM-DD.log`.
+- Salida dual: en consola y en archivo.
+
+### Ejemplo de implementación
+
+A continuación se muestra el script en Python que configura el sistema de logs:
+
+```python
+import logging
+from datetime import datetime
+import os
+
+# Crear carpeta logs si no existe
+log_folder = "logs"
+if not os.path.exists(log_folder):
+    os.makedirs(log_folder)
+
+# Nombre del archivo de log con fecha
+log_filename = os.path.join(log_folder, datetime.now().strftime("farmtech_%Y-%m-%d.log"))
+
+# Configuración del logger
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler(log_filename),
+        logging.StreamHandler()
+    ]
+)
+
+logger = logging.getLogger("farmtech")
+````
+
+Con este sistema, cada vez que el robot ejecuta una acción relevante, puedes registrar eventos como:
+
+```python
+logger.info("Inicio del sistema FT-01")
+logger.warning("Batería baja detectada")
+logger.error("Fallo en el sensor de humedad")
+```
+
+> 💡 **Recomendación a futuro:** Puedes automatizar la limpieza de logs antiguos con un script en Bash que borre archivos mayores a cierto número de días (`find logs/ -type f -mtime +7 -delete`).
+

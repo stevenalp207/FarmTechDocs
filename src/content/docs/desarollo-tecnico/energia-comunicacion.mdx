@@ -1,0 +1,27 @@
+---
+title: Alimentación, comunicación y movilidad
+---
+
+### Sistema de potencia
+
+El sistema utiliza una **arquitectura híbrida de alimentación**:
+
+- **Raspberry Pi**: Alimentada por un _powerbank_ de **5V** y **3A** de salida (10000 mAh).
+- **Jetson Nano**: Alimentada por un banco de baterías con salida de **5V / 2A** (10000 mAh).
+
+### Movilidad
+
+Para la locomoción, el sistema emplea:
+
+- **Dos motores NEMA 17** de **1.8° por paso** y **48 mm** de largo.
+- Un **Adafruit DC & Stepper Motor Bonnet** para Raspberry Pi, el cual permite el control simultáneo de ambos motores mediante una **librería oficial de Adafruit**.
+
+### Comunicación
+
+Se utilizan diferentes tecnologías para la conexión a Internet y el control remoto:
+
+- **Raspberry Pi**: Conectividad mediante **WiFi 5**.
+- **Jetson Nano**: Conectividad por medio de **Ethernet** (RJ45), ideal para entornos de mayor ancho de banda o menor latencia.
+
+
+> Esta configuración asegura un sistema autónomo, móvil y con conectividad redundante para ambientes exigentes o remotos.

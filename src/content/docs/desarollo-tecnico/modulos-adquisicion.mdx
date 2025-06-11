@@ -1,0 +1,28 @@
+---
+title: Módulo de adquisición de datos
+---
+
+## Módulo de adquisición de datos terrestres
+
+El subsistema de sensores terrestres integra cuatro componentes con características técnicas específicas:
+
+- **BMP390**: Opera en un rango de presión de 300–1250 hPa, con una precisión de ±0.5 hPa. Ideal para mediciones barométricas.
+- **SCD30**: Utiliza tecnología NDIR para detección de CO₂ con un rango de 0–40000 ppm y precisión de ±(30 ppm + 3%).
+- **LTR390**: Mide el índice UV con una respuesta espectral de 280–400 nm.
+- **Sensor de humedad de suelo**: Emplea tecnología capacitiva con un rango de 0–100% VWC y una precisión de ±3%.
+
+Todos los sensores cuentan con tecnología de auto-calibración de **Adafruit** y transmiten datos mediante el protocolo **I2C**, soportando velocidades de 50 kHz a 400 kHz.
+
+
+## Módulo de adquisición de datos satelitales
+
+El sistema de posicionamiento del **FT-01** utiliza un **Ultimate GPS HAT** con chipset **u-blox M8N**, compatible con los sistemas GPS, GLONASS, Galileo y BeiDou. Sus características son:
+
+- Precisión: 2.5 m CEP.
+- Tiempo de primer fix en frío: 26 segundos.
+- Antena activa: Ganancia de 28 dB, con conector **SMA**.
+- Soporte para corrección diferencial (**DGPS**).
+- Salida de datos: Formato **NMEA 0183** vía **UART**, configurable entre 9600 y 115200 baudios.
+- Sincronización temporal: Pulso **PPS** con precisión de 30 ns RMS.
+
+> Este módulo permite una localización confiable y precisa, clave para aplicaciones de georreferenciación y sincronización de datos.

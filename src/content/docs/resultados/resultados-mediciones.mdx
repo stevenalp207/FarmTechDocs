@@ -1,0 +1,80 @@
+---
+title: Resultados de mediciones
+---
+
+Esta sección expone los principales resultados obtenidos durante el desarrollo y las pruebas del robot **FT-01**, diseñado para ayudar a los agricultores en la toma de decisiones sobre qué producto sembrar, considerando las condiciones específicas del terreno. El prototipo, equipado con sensores terrestres y conexión a datos satelitales, recopila información ambiental clave que es procesada por una inteligencia artificial (IA) para generar recomendaciones personalizadas.
+
+## Resultados de mediciones terrestres
+
+Para la evaluación del terreno se emplearon sensores especializados conectados al sistema robótico, encargados de medir parámetros ambientales clave. Estos datos permiten identificar qué cultivos pueden desarrollarse con mayor éxito en un área específica.
+
+Las mediciones se realizaron en un terreno de prueba ubicado en **CEDES Don Bosco**, durante dos semanas. A continuación se presentan los valores promedio registrados por los sensores:
+
+### Semana 1
+
+| Parámetro   | Sensor | Valor Promedio | Unidad         |
+| ----------- | ------ | -------------- | -------------- |
+| Presión     | BMP390 | 889.65         | hPa            |
+| Temperatura | BMP390 | 28.7           | °C             |
+| Luz cruda   | LTR390 | 92             | -(raw)         |
+| UV crudo    | LTR390 | 0.2            | -(raw)         |
+| Lux         | LTR390 | 74.3           | lux            |
+| Índice UV   | LTR390 | 0.1            | escala (0-11+) |
+| CO₂         | SCD30  | 420            | ppm            |
+| Humedad     | SOIL   | 56.8           | % RH           |
+
+### Semana 2
+
+| Parámetro   | Sensor | Valor Promedio | Unidad         |
+| ----------- | ------ | -------------- | -------------- |
+| Presión     | BMP390 | 962.33         | hPa            |
+| Temperatura | BMP390 | 22.3           | °C             |
+| Luz cruda   | LTR390 | 150            | -(raw)         |
+| UV crudo    | LTR390 | 0.5            | -(raw)         |
+| Lux         | LTR390 | 120            | lux            |
+| Índice UV   | LTR390 | 0.4            | escala (0-11+) |
+| CO₂         | SCD30  | 390            | ppm            |
+| Humedad     | SOIL   | 45.3           | % RH           |
+
+## Datos satelitales obtenidos
+
+Para complementar los datos terrestres, se utilizó la API **NASA POWER** (Prediction Of Worldwide Energy Resources) que proporciona datos meteorológicos históricos y actuales a partir de coordenadas geográficas.
+
+Se empleó un script en Python para realizar solicitudes programáticas de variables climáticas clave, como:
+
+* Temperatura media y extrema
+* Humedad relativa
+* Precipitación
+* Radiación solar
+* Velocidad del viento
+* Punto de rocío
+
+Las consultas abarcaron un rango de 30 días desde el **10 de mayo** hasta la fecha actual.
+
+
+### Parámetros satelitales promediados
+
+| Parámetro            | Valor Promedio | Unidad       | Descripción                        |
+| -------------------- | -------------- | ------------ | ---------------------------------- |
+| T2M                  | 23.91          | °C           | Temperatura media a 2 metros       |
+| T2M\_MAX             | 28.26          | °C           | Temperatura máxima diaria          |
+| T2M\_MIN             | 21.24          | °C           | Temperatura mínima diaria          |
+| T2M\_RANGE           | 7.02           | °C           | Rango de temperatura               |
+| PRECTOTCORR          | 15.44          | mm           | Precipitación corregida            |
+| RH2M                 | 87.95          | %            | Humedad relativa a 2 metros        |
+| QV2M                 | 17.41          | g/kg         | Contenido de vapor específico      |
+| WS10M                | 0.87           | m/s          | Velocidad del viento a 10 metros   |
+| WS10M\_MAX           | 1.76           | m/s          | Velocidad máxima del viento        |
+| WS10M\_MIN           | 0.19           | m/s          | Velocidad mínima del viento        |
+| T2M\_DEW             | 21.63          | °C           | Temperatura del punto de rocío     |
+| T2M\_WET             | 22.77          | °C           | Temperatura de bulbo húmedo        |
+| TS                   | 24.21          | °C           | Temperatura de la superficie       |
+| ALLSKY\_SFC\_LW\_DW  | 36.94          | W/m²         | Radiación infrarroja descendente   |
+| ALLSKY\_SFC\_SW\_DWN | 15.48          | W/m²         | Radiación solar total descendente  |
+| CLRSKY\_SFC\_SW\_DWN | -958.00        | W/m²         | Radiación solar en cielo despejado |
+| ALLSKY\_KT           | -999.00        | adimensional | Índice de claridad del cielo       |
+| EVLAND               | 4.13           | mm/día       | Evaporación sobre tierra           |
+| PS                   | 93.38          | kPa          | Presión superficial atmosférica    |
+
+Estos valores fueron procesados por el sistema de IA junto con los datos terrestres para generar recomendaciones agrícolas más precisas.
+

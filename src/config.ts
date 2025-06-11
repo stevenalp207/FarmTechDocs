@@ -23,13 +23,21 @@ export const menu_items: { title: string; href: string }[] = [
 
 // Just works with top-level folders and files. For files, don't add extension as it looks for the slug, and not the file name.
 export const side_nav_menu_order: string[] = [
-  "getting-started",
-  "guides",
-  "guides/pages",
-  "guides/table-of-contents",
-  "guides/sidebar-navigation",
-  "custom-components",
-  "reference",
+  "resumen",
+  "desarollo-tecnico",
+  "desarollo-tecnico/arquitectura",
+  "desarollo-tecnico/modulos-adquisicion",
+  "desarollo-tecnico/ia",
+  "desarollo-tecnico/energia-comunicacion",
+  "desarollo-tecnico/logs",
+  "diagramas-tecnicos",
+  "diagramas-tecnicos/diagramas-flujo-electrico",
+  "diagramas-tecnicos/plano-estructural",
+  "resultados",
+  "resultados/resultados-mediciones",    
+  "resultados/resultados-ia",
+  "uso-usuario",
+
 ];
 
 // Don't delete anything. You can use 'true' or 'false'.

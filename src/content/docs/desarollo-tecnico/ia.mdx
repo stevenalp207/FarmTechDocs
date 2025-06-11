@@ -1,0 +1,102 @@
+---
+title: Procesamiento y análisis con inteligencia artificial
+---
+
+La **Jetson Nano** del sistema **FT-01** implementa un sistema de análisis basado en el modelo **Gemma3**, ejecutado localmente mediante **Ollama**, para generar reportes estructurados orientados a la toma de decisiones.
+
+### Flujo automatizado
+
+El flujo de procesamiento incluye:
+
+1. **Entrada**: Un archivo `.txt` con un *prompt* estructurado que define campos fijos como:
+   - Temperatura
+   - Concentración de CO₂
+   - Humedad del suelo y del ambiente
+   - Datos de posicionamiento satelital
+
+2. **Procesamiento**:
+   - Validación automática de rangos permitidos.
+   - Generación de contenido estructurado en **Markdown**.
+   - Conversión de Markdown a página web usando CelestialDocs.
+
+3. **Salida**:
+   - Reportes precisos con enfoque técnico.
+   - Adaptabilidad a patrones de datos emergentes.
+   - Registro histórico de cada respuesta generada por la IA para trazabilidad y mejora continua.
+
+
+> Este enfoque permite transformar datos ambientales en información útil para toma de decisiones, con respaldo de modelos de lenguaje avanzados y hardware de cómputo en el borde.
+
+### Prompt usado para el análisis
+
+```bash
+Eres un experto en agricultura de precisión, agronomía y ciencias ambientales. Analiza los siguientes datos ambientales y genera un informe agrícola completo y detallado en el formato estructurado que se indica a continuación.
+
+### 📍 Ubicación y Condiciones Generales
+- Latitud y longitud exactas (incluye los valores numéricos)
+- Altitud aproximada (calcula a partir de la presión atmosférica)
+- Temperatura (especifica °C)
+- Humedad relativa (especifica %)
+- Radiación solar (especifica W/m² o lux)
+- Precipitación acumulada (especifica mm)
+- Velocidad del viento (especifica m/s)
+- Índice UV y su interpretación
+- Calidad del aire (si hay datos disponibles)
+- Presión atmosférica (especifica hPa)
+
+### 🌾 Cultivos Recomendados
+Por cada cultivo viable según las condiciones específicas, incluye:
+- 🌱 **Nombre del cultivo** (científico y común)
+  - Variedades específicas recomendadas para esta región
+  - Temporada ideal de siembra (meses específicos)
+  - Requisitos edafoclimáticos que cumple este ambiente
+  - Ciclo de cultivo esperado (días hasta cosecha)
+  - Rendimiento potencial (ton/ha o kg/m²)
+  - Consideraciones especiales para esta ubicación
+
+### ✅ Consejos de Manejo Agronómico
+- Preparación del terreno (técnicas específicas, profundidad de laboreo)
+- Riego:
+  * Sistema recomendado (goteo, aspersión, etc.)
+  * Frecuencia (días)
+  * Duración (minutos/horas)
+  * Cantidad (litros/m²)
+- Fertilización:
+  * Requerimientos NPK según etapa fenológica
+  * Micronutrientes críticos para la zona
+  * Cronograma de aplicación
+- Control de plagas y enfermedades:
+  * Plagas y enfermedades comunes en esta zona y condiciones
+  * Umbrales económicos de daño
+  * Métodos de control integrado
+  * Productos biológicos y químicos recomendados
+
+### ⚠️ Riesgos Potenciales
+- Clima extremo (probabilidad de sequías, inundaciones, heladas)
+- Limitaciones edáficas según la zona
+- Posibles deficiencias nutricionales según el perfil de suelo típico
+- Plagas o enfermedades estacionales con mayor probabilidad
+- Riesgos asociados al cambio climático en esta región
+
+### 🌿 Sostenibilidad y Buenas Prácticas
+- Técnicas agroecológicas específicas para esta zona
+- Manejo del agua:
+  * Tecnologías de conservación
+  * Captación de agua de lluvia
+  * Reutilización
+- Manejo del suelo:
+  * Cultivos de cobertura recomendados
+  * Técnicas anti-erosión
+  * Incorporación de materia orgánica
+- Biodiversidad:
+  * Especies beneficiosas a promover
+  * Corredores biológicos
+  * Manejo integrado de plagas
+- Medidas para mitigar huella de carbono
+
+### 📊 Datos Analizados
+Incluye un resumen de los datos originales y valores derivados.
+
+Datos para procesar:
+
+```
