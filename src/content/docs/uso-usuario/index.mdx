@@ -1,0 +1,132 @@
+---
+title: Manual de Usuario
+hide_breadcrumbs: true
+---
+
+import Callout from "@/components/Callout.astro";
+import Card from '@/components/Card.astro';
+import { Info, Wrench, Activity, Monitor, BookOpenCheck } from 'lucide-react';
+
+FarmTech es un sistema robótico móvil autónomo, desarrollado para asistir a agricultores en la toma de decisiones basadas en datos ambientales. Utilizando sensores, datos satelitales e Inteligencia Artificial, FarmTech analiza el entorno agrícola y genera recomendaciones personalizadas sobre qué cultivo es más adecuado sembrar.
+
+## ⚙️ Puesta en marcha
+
+<Card title="1. Encendido del sistema" icon={Wrench}>
+Para iniciar FarmTech, asegúrate de encender y conectar las 2 powerbank del sistema FT-01. Espera aproximadamente 30 segundos para que el sistema realice su autoevaluación de sensores e inicio correcto.
+</Card>
+
+<Card title="2. Encendido de motores" icon={Wrench}>
+FarmTech cuenta con un botón de encendido adicional para activar los motores. Este botón se encuentra en la parte de abajo del robot, en un banco de baterías. Activalo una vez para activar los motores y permitir el movimiento autónomo.
+</Card>
+
+<Card title="3. Uso de motores y aplicaciones" icon={Wrench}>
+Ingresa a la página web `ip-del-robot:8080` desde tu navegador. Desde aquí podrás:
+- Controlar el robot manualmente.
+- Controlar el servomotor del sensor de humedad de suelo.
+- Si ingresas a `ip-del-robot:8080/datos` podrás ver los datos recolectados por el robot en tiempo real.
+</Card>
+
+
+## 🚜 Funcionamiento
+
+<Card title="Modo de Exploración" icon={Activity}>
+El FT-01 al estar en su versión de prototipo, su modo de exploración debe ser totalmente manual. El usuario debe guiar al robot por el terreno a explorar, asegurándose de que pase por todas las áreas de interés. El robot recolectará datos ambientales y de terreno durante este proceso.
+</Card>
+
+<Card title="Análisis de Datos" icon={Activity}>
+Una vez recolectados los datos, FarmTech los procesa internamente y los complementa con información satelital proveniente de fuentes como NASA LaRC. Se aplican modelos de IA como Gemma3 para interpretar los resultados.
+</Card>
+
+<Card title="Generación de Reportes" icon={Activity}>
+El sistema emite recomendaciones sobre:
+
+- Tipo de cultivo más viable.
+- Calendario de siembra y riego.
+- Alertas climáticas y advertencias.
+- Necesidades específicas del terreno.
+</Card>
+
+
+## 🖥️ Interfaz de Usuario
+
+<Card title="Aplicación FarmTech" icon={Monitor}>
+- Visualizar ubicación del robot.
+- Consultar reportes y gráficos.
+- Descargar informes PDF.
+- Controlar el robot de forma manual si se desea.
+</Card>
+
+
+## ✅ Recomendaciones de uso
+
+<Card title="Mantenimiento preventivo" icon={BookOpenCheck}>
+- Limpia sensores después de cada jornada.
+- No exponga el robot a condiciones extremas (lluvia intensa, barro excesivo).
+- Revisa ruedas y partes móviles semanalmente.
+- Carga completa antes de cada uso.
+</Card>
+
+<Card title="Condiciones óptimas de operación" icon={BookOpenCheck}>
+- Evita usar el robot en terrenos con pendiente extrema o charcos profundos.
+- Operar entre 5 °C y 40 °C.
+</Card>
+<Card title="Chequeo previo a la jornada" icon={BookOpenCheck}>
+- Verifica el estado de carga de ambas powerbanks.
+- Realiza una calibración rápida del sensor de humedad (desde la interfaz web).
+- Haz una prueba de conexión a la red Wi-Fi y accede a `ip-del-robot:8080`.
+- Haz un recorrido corto para verificar que los motores y sensores responden correctamente.
+</Card>
+
+## 🔄 Ciclo de funcionamiento completo
+
+- Inicialización del sistema
+
+- Exploración del terreno
+
+- Recolección de datos en tiempo real
+
+- Consulta y descarga de datos satelitales
+
+- Ejecución del modelo IA
+
+- Generación de reportes (PDF / Web)
+
+- Almacenamiento histórico
+
+## Preguntas frecuentes
+
+<details>
+<summary>¿Qué hago si el robot no enciende?</summary>
+
+Verifica que ambas powerbank estén completamente cargadas y correctamente conectadas. Asegúrate también de presionar el botón de encendido de los motores ubicado en la parte inferior del robot.
+</details>
+
+<details>
+<summary>¿Puedo dejar el robot funcionando sin supervisión?</summary>
+
+No se recomienda. Dado que FarmTech aún está en versión prototipo, su modo de exploración es manual y requiere supervisión durante el desplazamiento.
+</details>
+
+<details>
+<summary>¿Qué tipo de sensores tiene FarmTech?</summary>
+
+FarmTech cuenta con sensores de humedad de suelo, temperatura, humedad ambiental, luminosidad, todos de la familia Adafruit, además de un módulo GPS para posicionamiento satelital.
+</details>
+
+<details>
+<summary>¿Cómo accedo a los datos recolectados?</summary>
+
+Desde cualquier navegador web conectado a la misma red del robot, visita `ip-del-robot:8080/datos` para ver los datos en tiempo real. También puedes descargar reportes en la sección de la interfaz principal.
+</details>
+
+<details>
+<summary>¿FarmTech funciona sin conexión a internet?</summary>
+
+Sí, el robot puede recolectar y analizar datos localmente. Sin embargo, para complementar con datos satelitales, necesita conexión a internet los primeros minutos de operación.
+</details>
+
+<details>
+<summary>¿Qué hago si no veo datos en la interfaz?</summary>
+
+Asegúrate de que el robot esté encendido correctamente, que los sensores pasaron la autoevaluación inicial y que estás accediendo desde un navegador compatible en la misma red local.
+</details>
